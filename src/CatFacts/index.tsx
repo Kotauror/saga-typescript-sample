@@ -20,7 +20,7 @@ const CatFacts: FunctionComponent<ICatFacts> = ({ className }) => {
     fetchCatFacts();
   }, []);
 
-  return <div></div>;
+  return <div>hello</div>;
 };
 
 export default CatFacts;
