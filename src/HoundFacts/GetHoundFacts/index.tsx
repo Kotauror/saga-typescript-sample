@@ -7,6 +7,8 @@ interface IHoundFacts {
   className?: string;
 }
 
+export const ERROR_IN_HOUND_INFO = "No hounds sorry!";
+
 const HoundFacts: FunctionComponent<IHoundFacts> = ({ className }) => {
   const [houndTypes, setHoundTypes] = useState<string[]>([]);
   const [fetchFactsError, setFetchFactsError] = useState<string>();
@@ -27,7 +29,7 @@ const HoundFacts: FunctionComponent<IHoundFacts> = ({ className }) => {
   return (
     <div className={className}>
       <ShowHoundFacts houndTypes={houndTypes} />
-      {fetchFactsError && "ERROR!"}
+      {fetchFactsError && ERROR_IN_HOUND_INFO}
     </div>
   );
 };

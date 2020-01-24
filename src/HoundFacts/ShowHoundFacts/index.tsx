@@ -11,9 +11,11 @@ const ShowHoundFacts: FunctionComponent<IShowHoundFacts> = ({
   className
 }) => (
   <div className={className}>
-    {houndTypes.map(hound => (
-      <li key={hound}>{hound}</li>
-    ))}
+    <ul className="dogTypes">
+      {houndTypes.map(hound => (
+        <li key={hound}>{hound}</li>
+      ))}
+    </ul>
   </div>
 );
 
