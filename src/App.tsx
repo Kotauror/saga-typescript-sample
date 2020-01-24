@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FunctionComponent } from "react";
-import HoundFacts from './HoundFacts/GetHoundFacts';
+import GetHoundFacts from './HoundFacts/GetHoundFacts';
 
 interface IApp {
   className?: string;
@@ -8,7 +8,7 @@ interface IApp {
 
 const App: FunctionComponent<IApp> = ({ className }) => (
   <div className={className}>
-    <HoundFacts />
+    <GetHoundFacts />
   </div>
 );
 

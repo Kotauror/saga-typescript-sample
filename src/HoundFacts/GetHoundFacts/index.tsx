@@ -7,16 +7,18 @@ interface IHoundFacts {
   className?: string;
 }
 
+export const ERROR_IN_HOUND_INFO = "No hounds sorry!";
+
 const HoundFacts: FunctionComponent<IHoundFacts> = ({ className }) => {
   const [houndTypes, setHoundTypes] = useState<string[]>([]);
-  const [fetchFactsError, setFetchFactsError] = useState<string>();
+  const [fetchFactsError, setFetchFactsError] = useState<boolean>(false);
 
   const fetchHoundFacts = async () => {
     try {
       const response = await getDogFacts();
       setHoundTypes(response.data.message.hound);
     } catch (e) {
-      setFetchFactsError("Error!");
+      setFetchFactsError(true);
     }
   };
 
@@ -27,7 +29,7 @@ const HoundFacts: FunctionComponent<IHoundFacts> = ({ className }) => {
   return (
     <div className={className}>
       <ShowHoundFacts houndTypes={houndTypes} />
-      {fetchFactsError && "ERROR!"}
+      {fetchFactsError && ERROR_IN_HOUND_INFO}
     </div>
   );
 };
