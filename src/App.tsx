@@ -1,6 +1,5 @@
 import * as React from "react";
 import { FunctionComponent } from "react";
-import "./App.css";
 
 interface IApp {
   className?: string;
